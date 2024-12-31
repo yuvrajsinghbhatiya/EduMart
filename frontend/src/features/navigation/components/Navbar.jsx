@@ -55,7 +55,6 @@ export const Navbar = ({ isProductList = false }) => {
         <Typography
           variant="h5"
           component="a"
-          href="/"
           sx={{
             fontWeight: 700,
             color: '#384959',

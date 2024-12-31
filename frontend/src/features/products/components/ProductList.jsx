@@ -141,7 +141,7 @@ export const ProductList = () => {
     }
 
     dispatch(fetchProductsAsync(finalFilters));
-  }, [filters, page, sort]);
+  }, [dispatch, filters, loggedInUser?.isAdmin, page, sort]);
 
   const handleAddRemoveFromWishlist = (e, productId) => {
     if (e.target.checked) {
