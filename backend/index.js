@@ -25,11 +25,13 @@ connectToDB()
 
 // middlewares
 server.use(cors({
-    origin: process.env.ORIGIN || 'http://localhost:3000',  // Fallback to localhost if not defined
-    credentials: true,
-    exposedHeaders: ['X-Total-Count'],
-    methods: ['GET', 'POST', 'PATCH', 'DELETE']
-  }));
+  exposedHeaders: ['X-Total-Count'],
+  origin: ["https://edumart-six.vercel.app/", "http://localhost:3000"],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS",'PATCH'],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true,
+  optionsSuccessStatus: 200,
+}));
 server.use(express.json())
 server.use(cookieParser())
 server.use(morgan("tiny"))
